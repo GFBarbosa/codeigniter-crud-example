@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php $this->load->view('_partials/head'); ?>
 <body>
 <?php $this->load->view('_partials/header'); ?>
-<div class="container">
+<div class="container container-person mt-5 p-5">
     <?=write_message()?>
     <h1>Produtos</h1>
     <div class="col-md-12 mb-3">
@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a class="btn btn-primary" href="<?= base_url('product/form/') ?>">Novo Produto</a>
         </div>
     </div>
-    <table id="product_table" class="table table-striped table-bordered" style="width:100%">
+    <table id="product_table" class="table table-striped table-bordered table-responsive-sm" style="width:100%">
         <thead>
         <tr>
             <th>ID</th>
@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tr>
             <?php }
         } else { ?>
-            <td class="text-center" colspan="4">Não há produtos</td>
+            <td class="text-center" colspan="6">Não há produtos</td>
         <?php } ?>
         </tbody>
     </table>

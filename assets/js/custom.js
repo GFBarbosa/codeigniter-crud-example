@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('#product_table').DataTable();
+    $('#order_table').DataTable();
     $('#descricao').summernote({
         toolbar: [
             // [groupName, [list of button]]
@@ -15,5 +16,9 @@ $(document).ready(function() {
     $('.delete-product').click(function () {
         var delete_url = $(this).data('id');
         $(".modal-footer #confirmDeleteProduct").attr("href", delete_url);
-    })
+    });
+    $('.delete-order').click(function () {
+        var delete_url = $(this).data('id');
+        $(".modal-footer #confirmDeleteOrder").attr("href", delete_url);
+    });
 } );

@@ -8,6 +8,17 @@ class Product_model extends CI_Model {
         return $query->result();
     }
 
+    public function getProductsByOrderId($id){
+        $this->db->join('product_order', 'product_order.product_id = product.id');
+        $this->db->join('order', 'product_order.order_id = order.id');
+        $this->db->select('product.nome, product.sku, product.preco, product_order.product_qtd');
+        $this->db->order_by('product.id');
+        $this->db->where('product_order.order_id', $id);
+        $this->db->where('order.status', 1);
+        $query = $this->db->get('product');
+        return $query->result();
+    }
+
     public function getProductById($id){
         $this->db->where('id', $id);
         $this->db->where('status', 1);
